@@ -9,5 +9,7 @@ public class CasesProfile: Profile
     public CasesProfile()
     {
        CreateMap<CreateCaseModel, Case>();
+       CreateMap<Case, CasesListView>()
+           .ForMember(dst => dst.TicketNumber, conf => conf.MapFrom(src => src.FinansysTicketNumber));
     }
 }

@@ -1,40 +1,71 @@
-using Core.Helpers;
+using System.Text.Json.Serialization;
 
 namespace Core.Models.Cases;
 
 public class CasesListView
 {
-    public DatatableValue<int> Id { get; set; }
-    public DatatableValue<string> CreatedAt { get; set; }
-    public DatatableValue<string> TicketNumber { get; set; }
-    public DatatableValue<string> TypeName { get; set; }
-    public DatatableValue<string> SubtypeName { get; set; }
-    public DatatableValue<string> TypificationName  { get; set; }
-    public DatatableValue<string> ReceptionBranch  { get; set; }
-    public DatatableValue<string> ReceptionTime  { get; set; }
-    public DatatableValue<string> BranchAffected  { get; set; }
-    public DatatableValue<string> CaseStatusName  { get; set; }
-    public DatatableValue<string> OriginName  { get; set; }
-    public DatatableValue<string> Subject  { get; set; }
-    public DatatableValue<string> Description  { get; set; }
-    public DatatableValue<string> CaseOwnerName  { get; set; }
-    public DatatableValue<string> ResolverAreas  { get; set; }
-    public DatatableValue<string> CompanyName  { get; set; }
-    public DatatableValue<string> CallDirection  { get; set; }
-    public DatatableValue<List<string>> Tags  { get; set; }
-    public DatatableValue<string> UpdatedAt  { get; set; }
-    public DatatableValue<string> Solution  { get; set; }
-    public DatatableValue<string> Comment  { get; set; }
-    public DatatableValue<string> RequestExtension  { get; set; }
-    public DatatableValue<string> BusinessOfficer  { get; set; }
-    public DatatableValue<string> Promoter { get; set; }
-    public DatatableValue<int> NumberOfComments { get; set; }
-    public DatatableValue<string> ContactName { get; set; }
-    public DatatableValue<string> ContactEmail { get; set; }
-    public DatatableValue<string> ClientNumber { get; set; }
-    public DatatableValue<string> ContactPhone { get; set; }
-    public DatatableValue<string> ContactFullName { get; set; }
-    public DatatableValue<string> ClientBranch { get; set; }
-    public DatatableValue<string> Layout { get; set; }
+    public int Id { get; set; }
+    [JsonPropertyName("Creado el")]
+    public string CreatedAt { get; set; }
+    [JsonPropertyName("Nro de Ticket")]
+    public string TicketNumber { get; set; }
+    [JsonPropertyName("Tipo")]
+    public string TypeName { get; set; }
+    [JsonPropertyName("Subtipo")]
+    public string SubtypeName { get; set; }
+    [JsonPropertyName("Tipificación")]
+    public string TypificationName  { get; set; }
+    [JsonPropertyName("Sucursal Recepcion")]
+    public string ReceptionBranch  { get; set; }
+    [JsonPropertyName("Recepcionado el")]
+    public string ReceptionTime  { get; set; }
+    [JsonPropertyName("Sucursal Afectada")]
+    public string BranchAffected  { get; set; }
+    [JsonPropertyName("Estado")]
+    public string CaseStatusName  { get; set; }
+    [JsonPropertyName("Origen")]
+    public string OriginName  { get; set; }
+    [JsonPropertyName("Subject")]
+    public string Subject  { get; set; }
+    [JsonPropertyName("Descripción")]
+    public string Description  { get; set; }
+    [JsonPropertyName("Dueño del caso")]
+    public string CaseOwnerName  { get; set; }
+    [JsonPropertyName("Areas Resolutoras")]
+    public List<string> ResolverAreas  { get; set; }
+    [JsonPropertyName("Empresa")]
+    public string CompanyName  { get; set; }
+    [JsonPropertyName("Direccion de llamada")]
+    public string CallDirection  { get; set; }
+    [JsonPropertyName("Tags")]
+    public List<string> Tags  { get; set; }
+    [JsonPropertyName("Actualizado ")]
+    public string UpdatedAt  { get; set; }
+    [JsonPropertyName("Solución")]
+    public string Solution  { get; set; }
+    [JsonPropertyName("Comentario")]
+    public string Comment  { get; set; }
+    [JsonPropertyName("Pedido de Extensión")]
+    public string RequestExtension  { get; set; }
+    [JsonPropertyName("Oficial de Negocios")]
+    public string BusinessOfficer  { get; set; }
+    [JsonPropertyName("Promotor")]
+    public string Promoter { get; set; }
+    [JsonPropertyName("Numero de Comentarios")]
+    public int NumberOfComments { get; set; }
+    [JsonPropertyName("Contacto")]
+    public string ContactName { get; set; }
+    [JsonPropertyName("Contacto de Email")]
+    public string ContactEmail { get; set; }
+    [JsonPropertyName("Nro de Cliente")]
+    public string ClientNumber { get; set; }
+    [JsonPropertyName("Nro de Teléfono")]
+    public string ContactPhone { get; set; }
+    [JsonPropertyName("Contacto Full Name")]
+    public string ContactFullName { get; set; }
+    [JsonPropertyName("Sucursal Cliente")]
+    public string ClientBranch { get; set; }
+    [JsonPropertyName("Layout")]
+    public string Layout { get; set; }
 
 }

@@ -21,6 +21,12 @@ public class CasesController : BaseApiController
     {
         var result = await _services.GetListView(pageIndex, pageSize);
         return result.ToActionResult();
+    }   
+    [HttpGet("kanvan-view")]
+    public async Task<IActionResult> GetKanvanView(int pageIndex = 0, int pageSize = 20)
+    {
+        var result = await _services.GetKanbanView(pageIndex, pageSize);
+        return result.ToActionResult();
     }
 
     [HttpPost]
@@ -36,4 +42,5 @@ public class CasesController : BaseApiController
         var result = await _services.GetCase(id);
         return result.ToActionResult();
     }
+    
 }

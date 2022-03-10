@@ -36,6 +36,7 @@ namespace Core.Entities.Cases
         public string Qualification { get; set; }
         public bool RequestExtension { get; set; }
         public string AttachmentFile { get; set; }
+        public string Issue { get; set; }
         
     }
 }

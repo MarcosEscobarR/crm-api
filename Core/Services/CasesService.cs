@@ -1,11 +1,12 @@
 using Core.Helpers.Result;
+using Core.Interfaces;
 using Core.Interfaces.Repositories;
 using Core.Interfaces.Services;
 using Core.Models.Cases;
 
 namespace Core.Services;
 
-public class CasesService : ICasesServices
+public class CasesService :BaseService, ICasesServices
 {
     private readonly ICasesRepository _casesRepository;
 
@@ -18,12 +19,13 @@ public class CasesService : ICasesServices
     public async Task<Result> GetListView(int pageIndex, int pageSize)
     {
         var data = await _casesRepository.GetListView(pageIndex, pageSize);
-        return data is null ? Result.NotFound() : Result.Ok(data);
+        return MatchResult(data);
     }
 
-    public Task<Result> GetKanbanView(int pageIndex, int pageSize)
+    public async Task<Result> GetKanbanView(int pageIndex, int pageSize)
     {
-        throw new System.NotImplementedException();
+        var data = await _casesRepository.GetKanvanView(pageIndex, pageSize);
+        return MatchResult(data);
     }
 
     public Task<Result> GetCanvasView(int pageIndex, int pageSize)
@@ -47,4 +49,5 @@ public class CasesService : ICasesServices
     {
         throw new System.NotImplementedException();
     }
+
 }

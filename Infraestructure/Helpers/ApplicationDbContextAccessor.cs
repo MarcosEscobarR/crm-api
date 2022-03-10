@@ -21,7 +21,7 @@ public class ApplicationDbContextAccessor
         foreach (var entityEntry in changes)
         {
             switch (entityEntry.State)
-            {
+            {   
                 case EntityState.Added:
                     entityEntry.Entity.CreatedAt = DateTime.Now.SetKindUtc();
                     // entityEntry.Entity.UserWhoCreated = await _identityService.GetCurrentUser();
